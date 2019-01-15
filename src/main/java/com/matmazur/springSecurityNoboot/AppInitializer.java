@@ -1,10 +1,23 @@
 package com.matmazur.springSecurityNoboot;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import com.matmazur.springSecurityNoboot.web.WebConfig;
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-@EnableWebMvc
-@Configuration
-public class AppInitializer  extends AbstractSecurityWebApplicationInitializer {
+public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+
+    @Override
+    protected Class<?>[] getRootConfigClasses() {
+        return new Class[0];
+    }
+
+    @Override
+    protected Class<?>[] getServletConfigClasses() {
+        return new Class[]{WebConfig.class};
+    }
+
+    @Override
+    protected String[] getServletMappings() {
+        return new String[]{"/"};
+    }
 }
