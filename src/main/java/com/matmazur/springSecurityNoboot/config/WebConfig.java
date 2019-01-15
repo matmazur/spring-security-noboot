@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@ComponentScan(basePackageClasses = {HomeController.class})
+@ComponentScan(basePackages = "com.matmazur.springSecurityNoboot")
 @EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 
